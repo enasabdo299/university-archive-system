@@ -1,0 +1,380 @@
+/* CSS - لوحة تحكم المشرفين */
+
+/* 1. Layout & Toolbar */
+.admin-container {
+    padding: 0;
+}
+
+.admin-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+    border-top: 4px solid var(--secondary);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.toolbar-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+.user-name {
+    
+    color: var(--primary);
+}
+
+.user-role {
+    background: #f0f2f5;
+    padding: 4px 10px;
+    border-radius: 15px;
+    
+    color: var(--gray);
+}
+
+.notification-badge {
+    position: relative;
+    background: none;
+    border: none;
+    
+    color: var(--gray);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.badge-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--danger);
+    color: white;
+    
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. Quick Stats Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: var(--transition);
+    border-bottom: 4px solid transparent;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-bottom-color: var(--primary);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(27, 54, 93, 0.05); /* --primary with opacity */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: var(--primary);
+}
+
+.stat-info h3 {
+    
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.stat-info p {
+    color: var(--gray);
+    
+}
+
+/* 3. Sections & Tables */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.view-all {
+    
+    color: var(--secondary);
+    text-decoration: none;
+    
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+section {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.projects-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.projects-table th, .projects-table td {
+    padding: 15px;
+    text-align: right;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.projects-table th {
+    color: var(--gray);
+    
+    
+}
+
+.projects-table tr:last-child td {
+    border-bottom: none;
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    
+    
+}
+
+.status-badge.pending {
+    background: rgba(243, 156, 18, 0.1);
+    color: var(--warning);
+}
+
+.status-badge.approved, .project-status.active {
+    background: rgba(39, 174, 96, 0.1);
+    color: var(--success);
+}
+
+.project-status.pending {
+    background: rgba(243, 156, 18, 0.1);
+    color: var(--warning);
+}
+
+/* 4. Action Buttons (Fixing the missing styles) */
+.btn-action {
+    border: none;
+    background: transparent;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.btn-review {
+    background: rgba(27, 54, 93, 0.08); /* light primary */
+    color: var(--primary);
+}
+
+.btn-review:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-approve {
+    background: rgba(39, 174, 96, 0.1);
+    color: var(--success);
+}
+
+.btn-approve:hover {
+    background: var(--success);
+    color: white;
+}
+
+.btn-reject {
+    background: rgba(231, 76, 60, 0.1);
+    color: var(--danger);
+}
+
+.btn-reject:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-small {
+    padding: 5px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f8f9fa;
+    color: var(--gray);
+}
+
+.btn-small:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* 5. Quick Reports Cards */
+.reports-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.report-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 1px solid #eee;
+}
+
+.report-card:hover {
+    background: white;
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.report-icon {
+    
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.report-content h3 {
+    
+    margin-bottom: 5px;
+}
+
+.report-link {
+    display: inline-block;
+    margin-top: 10px;
+    
+    color: var(--secondary);
+    text-decoration: none;
+    
+}
+
+/* 6. Students Grid */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.student-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.student-avatar {
+    width: 50px;
+    height: 50px;
+    background: #eef2f7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    
+}
+
+.student-info h3 {
+    
+    margin-bottom: 2px;
+}
+
+.student-info p {
+    
+    color: var(--gray);
+    margin-bottom: 5px;
+}
+
+.student-projects {
+    display: flex;
+    gap: 10px;
+    
+}
+
+.student-actions {
+    margin-right: auto;
+    display: flex;
+    gap: 5px;
+}
+
+/* Mobile Adjustments for Admin */
+@media (max-width: 768px) {
+    .admin-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+    }
+    
+    .toolbar-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .toolbar-actions .btn {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+        justify-content: center;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    .notification-badge {
+        align-self: center;
+        margin-top: 10px;
+    }
+}

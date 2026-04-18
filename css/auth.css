@@ -1,0 +1,209 @@
+/* css/auth.css */
+
+/* Auth Sections */
+.login-section,
+.register-section,
+.reset-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.login-box,
+.register-box,
+.reset-box {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-box::before,
+.register-box::before,
+.reset-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
+
+.login-header,
+.register-header,
+.reset-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h2,
+.register-header h2,
+.reset-header h2 {
+  
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.login-header p,
+.register-header p,
+.reset-header p {
+  color: var(--gray);
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+}
+
+.form-group label i {
+  margin-left: 8px;
+  color: var(--primary);
+}
+
+.form-control {
+  width: 100%;
+  padding: 15px 20px;
+  
+  border: 2px solid #e1e5ee;
+  border-radius: var(--border-radius);
+  background-color: white;
+  transition: var(--transition);
+  color: var(--gray);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2);
+}
+
+/* Buttons في صفحات المصادقة */
+.auth-buttons .btn {
+  padding: 15px 30px;
+  
+  
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.auth-buttons .btn i {
+  margin-left: 8px;
+}
+
+.auth-buttons .btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+}
+
+.auth-buttons .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(106, 17, 203, 0.4);
+}
+
+/* Select Wrapper */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: var(--primary);
+  pointer-events: none;
+}
+
+.select-wrapper select {
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Extra Links */
+.extra-links {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e1e5ee;
+}
+
+.extra-links a {
+  display: block;
+  color: var(--primary);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.extra-links a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+.extra-links a i {
+  margin-left: 8px;
+}
+
+/* Success Message */
+.success-message {
+  display: none;
+  background: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+  border: 1px solid #c3e6cb;
+}
+
+/* Reset Icon */
+.reset-icon {
+  
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Responsive Design للصفحات التوثيق */
+@media (max-width: 768px) {
+  .login-box,
+  .register-box,
+  .reset-box {
+    padding: 30px 20px;
+  }
+
+  .register-box {
+    max-width: 500px;
+  }
+
+  .auth-buttons .btn {
+    padding: 14px 25px;
+    
+  }
+}
